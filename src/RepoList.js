@@ -4,10 +4,6 @@ import styled from 'styled-components'
 
 import Label from './Label'
 
-const ResultsArea = styled.div`
-  margin-top: 15px;
-`
-
 const Result = styled.div`
   margin-top: 5px;
   padding: 0 5px;
@@ -18,14 +14,14 @@ const generateRepoLink = (author, repoName) =>
   `https://github.com/${author}/${repoName}`
 
 const RepoList = ({ author, results }) => (
-  <ResultsArea>
+  <div>
     <Label>Repositories ({results.length})</Label>
     {results.map((result, index) =>
       <Result even={((index + 1) % 2 === 0)} key={index}>
         <a target="_blank" href={generateRepoLink(author, result)}>{result}</a>
       </Result>
     )}
-  </ResultsArea>)
+  </div>)
 
 RepoList.propTypes = {
   author: PropTypes.string.isRequired,

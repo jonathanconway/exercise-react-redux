@@ -13,7 +13,6 @@ const Input = styled.input`
   height: 25px;
   padding: 2px 6px;
   outline: none;
-  margin: 5px 5px 0 5px;
 `
 
 const Filter = ({ id, label, onChangeFilterText, filterText }) => (
