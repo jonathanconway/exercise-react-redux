@@ -6,7 +6,8 @@ import { setFilterTextAndFetchResults } from './actions'
 const mapStateToProps = state => {
   return {
     filterText: state.filterText,
-    results: state.results
+    results: state.results,
+    isLoading: state.isLoading
   }
 }
 const mapDispatchToProps = dispatch => {

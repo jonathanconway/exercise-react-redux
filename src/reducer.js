@@ -1,6 +1,7 @@
 const DEFAULT_STATE = {
   results: [],
-  filterText: ''
+  filterText: '',
+  isLoading: false
 }
 
 const filterableResults = (state = DEFAULT_STATE, action) => {
@@ -8,12 +9,14 @@ const filterableResults = (state = DEFAULT_STATE, action) => {
     case 'SET_FILTER_TEXT':
       return {
         ...state,
-        filterText: action.filterText
+        filterText: action.filterText,
+        isLoading: true
       }
     case 'SET_RESULTS':
       return {
         ...state,
-        results: action.results
+        results: action.results,
+        isLoading: false
       }
     default:
       return state

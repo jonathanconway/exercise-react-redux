@@ -3,19 +3,21 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import Filter from './Filter'
+import Spinner from './Spinner'
 import RepoList from './RepoList'
 
-const FilterAndList = ({ onChangeFilterText, filterText, results }) => (
+const FilterAndList = ({ onChangeFilterText, filterText, results, isLoading }) => (
   <div>
     <Filter
       id="accountName"
       label="Filter by account name:"
       filterText={filterText}
       onChangeFilterText={onChangeFilterText} />
-    <RepoList
-      author={filterText}
-      results={results}
-    />
+    {isLoading
+      ? <Spinner />
+      : <RepoList
+          author={filterText}
+          results={results} />}
   </div>)
 
 FilterAndList.propTypes = {
