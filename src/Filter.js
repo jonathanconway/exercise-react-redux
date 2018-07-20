@@ -5,14 +5,14 @@ import styled from 'styled-components'
 import Label from './Label'
 
 const Input = styled.input`
-  border: solid 1px black;
-  border-radius: 5px;
-  border-top-width: 2px;
-  border-left-width: 2px;
-  font-size: 15px;
   height: 25px;
   padding: 2px 6px;
+  border: solid 1px black;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-radius: 5px;
   outline: none;
+  font-size: 15px;
 `
 
 const Filter = ({ id, label, onChangeFilterText, filterText }) => (
