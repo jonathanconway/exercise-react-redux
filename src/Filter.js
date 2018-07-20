@@ -23,8 +23,7 @@ const Filter = ({ id, label, onChangeFilterText, filterText }) => (
       type="text"
       onChange={(e) => onChangeFilterText(e.target.value)}
       value={filterText}
-      autoFocus
-    />
+      autoFocus />
   </div>)
 
 Filter.propTypes = {

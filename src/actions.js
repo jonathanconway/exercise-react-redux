@@ -16,11 +16,11 @@ const setResultsError = results => ({
   type: 'SET_RESULTS_ERROR'
 })
 
-const debouncedFetchResults = debounce((filterText, dispatch) => {
+const dispatchDebouncedFetchResults = debounce((filterText, dispatch) =>
   fetchReposFromGithub(filterText)
     .then(results => dispatch(setResults(formatResults(results))))
     .catch(() => dispatch(setResultsError()))
-}, 1000)
+, 1000)
 
 const setFilterText = filterText => ({
   type: 'SET_FILTER_TEXT',
@@ -28,7 +28,7 @@ const setFilterText = filterText => ({
 })
 
 const clearFilterText = () => {
-  debouncedFetchResults.cancel()
+  dispatchDebouncedFetchResults.cancel()
   return {
     type: 'CLEAR_FILTER_TEXT'
   }
@@ -43,5 +43,5 @@ export const setFilterTextAndFetchResults =
       }
 
       dispatch(setFilterText(filterText))
-      debouncedFetchResults(filterText, dispatch)
+      dispatchDebouncedFetchResults(filterText, dispatch)
     }

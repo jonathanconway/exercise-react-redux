@@ -8,12 +8,7 @@ injectGlobal`
 
   body, input, label, a {
     font-family: 'Source Sans Pro';
-  }`
+  }
+`
 
-const App = () => (
-  <div>
-    <FilterableRepoList />
-  </div>
-)
-
-export default App;
+export default () => <FilterableRepoList />

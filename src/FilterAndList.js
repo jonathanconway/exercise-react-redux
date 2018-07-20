@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 
 import Section from './Section'
 import Filter from './Filter'
 import Spinner from './Spinner'
 import RepoList from './RepoList'
+
+const AUTHOR_NOT_FOUND_MESSAGE = `Sorry, we couldn't retrieve any repos for that author.`
 
 const FilterAndList = ({ onChangeFilterText, filterText, results, isLoading, error }) => (
   <div>
@@ -20,10 +21,10 @@ const FilterAndList = ({ onChangeFilterText, filterText, results, isLoading, err
       {isLoading
         ? <Spinner />
         : (error
-            ? <span>Sorry, we couldn{'\''}t retrieve any repos for that author.</span>
+            ? <span>{AUTHOR_NOT_FOUND_MESSAGE}</span>
             : <RepoList
-              author={filterText}
-              results={results} /> )}
+                author={filterText}
+                results={results} /> )}
     </Section>
   </div>)
 

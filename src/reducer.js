@@ -5,7 +5,7 @@ const DEFAULT_STATE = {
   error: false
 }
 
-const filterableResults = (state = DEFAULT_STATE, action) => {
+export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case 'SET_FILTER_TEXT':
       return {
@@ -40,5 +40,3 @@ const filterableResults = (state = DEFAULT_STATE, action) => {
       return state
   }
 }
-
-export default filterableResults
