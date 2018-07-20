@@ -5,19 +5,6 @@ import styled from 'styled-components'
 import Filter from './Filter'
 import RepoList from './RepoList'
 
-const ResultsArea = styled.div`
-  margin-top: 15px;
-`
-
-const Result = styled.div`
-  margin-top: 5px;
-  padding: 0 5px;
-  ${props => props.even ? 'background-color: #efefef;' : ''}
-`
-
-const generateRepoLink = (authorName, repoName) =>
-  `https://github.com/${authorName}/${repoName}`
-
 const FilterAndList = ({ onChangeFilterText, filterText, results }) => (
   <div>
     <Filter
@@ -25,7 +12,10 @@ const FilterAndList = ({ onChangeFilterText, filterText, results }) => (
       label="Filter by account name:"
       filterText={filterText}
       onChangeFilterText={onChangeFilterText} />
-    <RepoList results={results} />
+    <RepoList
+      author={filterText}
+      results={results}
+    />
   </div>)
 
 FilterAndList.propTypes = {

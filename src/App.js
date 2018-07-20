@@ -1,7 +1,7 @@
 import React from 'react';
 import { injectGlobal } from 'styled-components'
 
-import FilterableList from './FilterableList.container'
+import FilterableRepoList from './FilterableRepoList'
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500');
@@ -12,7 +12,7 @@ injectGlobal`
 
 const App = () => (
   <div>
-    <FilterableList />
+    <FilterableRepoList />
   </div>
 )
 

@@ -14,20 +14,21 @@ const Result = styled.div`
   ${props => props.even ? 'background-color: #efefef;' : ''}
 `
 
-const generateRepoLink = (authorName, repoName) =>
-  `https://github.com/${authorName}/${repoName}`
+const generateRepoLink = (author, repoName) =>
+  `https://github.com/${author}/${repoName}`
 
-const RepoList = ({ onChangeFilterText, filterText, results }) => (
+const RepoList = ({ author, results }) => (
   <ResultsArea>
     <Label>Repositories ({results.length})</Label>
     {results.map((result, index) =>
       <Result even={((index + 1) % 2 === 0)} key={index}>
-        <a href={generateRepoLink(filterText, result)}>{result}</a>
+        <a target="_blank" href={generateRepoLink(author, result)}>{result}</a>
       </Result>
     )}
   </ResultsArea>)
 
 RepoList.propTypes = {
+  author: PropTypes.string.isRequired,
   results: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
