@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { spacingUnit, colorStripe } from './styleVariables'
 import Label from './Label'
 
 const Result = styled.div`
-  margin-top: 5px;
-  padding: 0 5px;
-  ${props => props.even ? 'background-color: #efefef;' : ''}
+  margin-top: ${spacingUnit}px;
+  padding: 0 ${spacingUnit}px;
+  ${props => props.even ? `background-color: ${colorStripe};` : undefined}
 `
 
 const generateRepoLink = (author, repoName) =>

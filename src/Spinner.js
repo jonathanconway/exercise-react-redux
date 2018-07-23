@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { spacingUnit } from './styleVariables'
+
 const Img = styled.img`
-  border-radius: 5px;
+  border-radius: ${spacingUnit}px;
 `
 
 export default () =>

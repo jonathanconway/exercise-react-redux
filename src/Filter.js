@@ -2,15 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { spacingUnit, colorBorder } from './styleVariables'
 import Label from './Label'
 
 const Input = styled.input`
-  height: 25px;
-  padding: 2px 6px;
-  border: solid 1px black;
+  height: ${spacingUnit * 4.5}px;
+  padding: ${spacingUnit / 2}px ${spacingUnit}px;
+  border: solid 1px ${colorBorder};
   border-top-width: 2px;
   border-left-width: 2px;
-  border-radius: 5px;
+  border-radius: ${spacingUnit}px;
   outline: none;
   font-size: 15px;
 `
